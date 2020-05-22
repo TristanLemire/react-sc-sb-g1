@@ -27,6 +27,7 @@
     "@storybook/preset-create-react-app": "^2.1.2",
     "@storybook/react": "^5.3.18",
     "@storybook/theming": "^5.3.18",
+    "prettier": "^2.0.5",
     "storybook-addon-designs": "^5.2.1",
     "typescript": "3.8.3"
   },
@@ -36,7 +37,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prettier": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "browserslist": [
     ">0.2%",
