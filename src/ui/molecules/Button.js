@@ -51,10 +51,10 @@ const ButtonWrapper = styled.button`
 `;
 
 const TwitchButton = props => {
-  const { text, type, color, iconLeft, iconRight, disabled} = props;
+  const { text, type, color, iconLeft, iconRight, disabled, handleClick} = props;
 
 return (
-<ButtonWrapper color={color} type={type} disabled={disabled}>
+<ButtonWrapper onClick={() => handleClick()} color={color} type={type} disabled={disabled}>
   {iconLeft && 
   <Icon icon={iconLeft} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
     {text && <p>{text}</p>} 
@@ -70,7 +70,8 @@ TwitchButton.propTypes = {
   colors: PropTypes.string,
   iconLeft: PropTypes.string,
   iconRight: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired
 };
 
 TwitchButton.defaultProps = {

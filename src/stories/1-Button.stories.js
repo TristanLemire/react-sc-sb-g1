@@ -26,7 +26,7 @@ export const Button = () => <TwitchButton
                               disabled={boolean("Disabled", false)}
                               iconLeft={select("Icon left", icons, icons.default)}
                               iconRight={select("Icon right", icons, icons.default)}
-                              onClick={() => {action('test')}}
+                              handleClick={action('button-click')}
                             />;
 
 Button.story = {
@@ -37,3 +37,4 @@ Button.story = {
      }
   }
 }
+
