@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, select, boolean } from "@storybook/addon-knobs";
-import { colors } from '../ui/atoms/Button';
+import { colors } from '../ui/molecules/Button';
 import TwitchIcon, { icons } from "../ui/atoms/Icon"
 
 
