@@ -46,13 +46,13 @@ const TwitchButton = props => {
     const IconLeft = props.iconLeft
     const IconRight = props.iconRight
 
-    if (text && !IconLeft && !IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}>{text}</ButtonWrapper>;
+    if (!IconLeft && !IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}>{text}</ButtonWrapper>;
 
-    else if (IconLeft && !text && !IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}><IconLeft/></ButtonWrapper>;
+    else if (IconLeft && !IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}><IconLeft/>{text}</ButtonWrapper>;
 
-    else if (IconLeft && text && !IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}><IconLeft/>{text}</ButtonWrapper>;
+    else if (IconLeft && IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}><IconLeft/>{text}<IconRight/></ButtonWrapper>;
 
-    else if (IconLeft && text && IconRight) return <ButtonWrapper disabled={disabled} color={color} type={type}><IconLeft/>{text}<IconRight/></ButtonWrapper>;
+    
 };
 
 TwitchButton.propTypes = {
