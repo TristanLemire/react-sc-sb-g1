@@ -1,15 +1,18 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Button } from '@storybook/react/demo';
+// import { Button } from '@storybook/react/demo';
+import TwitchButton, { type } from '../ui/atoms/Button';
+import { withKnobs, text } from "@storybook/addon-knobs";
 
 export default {
   title: 'Button',
-  component: Button,
+  component: Button,    
+  decorators: [withKnobs]
 };
 
-export const Text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export const Button = () => <TwitchButton type={type.primary} text={text("Text", "Primary Button")} ></TwitchButton>;
 
-Text.story = {
+Button.story = {
   parameters: {
      design: {
         type: 'figma',
@@ -17,11 +20,3 @@ Text.story = {
      }
   }
 }
-
-export const Emoji = () => (
-  <Button onClick={action('clicked')}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Button>
-);
