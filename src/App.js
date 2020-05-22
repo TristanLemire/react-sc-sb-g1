@@ -11,7 +11,7 @@ export default function App() {
             <div className="App">
                 <Badge text="IRL" color={colors.purple}/>
                 <Badge text="IRL" color={colors.grey}/>
-                <TwitchButton text="hello" type="primary" icon={FaBeer}></TwitchButton>
+                <TwitchButton text="hello" type="primary" iconLeft={FaBeer}></TwitchButton>
             </div>
       );
 }
