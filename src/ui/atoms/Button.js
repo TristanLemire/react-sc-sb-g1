@@ -21,21 +21,21 @@ const ButtonWrapper = styled.button`
 `;
 
 const TwitchButton = props => {
-    const { text, type, icon } = props;
-    if (icon && !text) return <ButtonWrapper type={type}>{icon}</ButtonWrapper>;
-    else if (text && !icon) return <ButtonWrapper type={type}>{text}</ButtonWrapper>;
-    else if (text && icon) return <ButtonWrapper type={type}>{icon}{text}</ButtonWrapper>;
+    const { text, type} = props;
+    const Icon = props.icon
+    if (Icon && !text) return <ButtonWrapper type={type}><Icon/></ButtonWrapper>;
+    else if (text && !Icon) return <ButtonWrapper type={type}>{text}</ButtonWrapper>;
+    return <ButtonWrapper type={type}><Icon/>{text}</ButtonWrapper>;
 };
 
 TwitchButton.propTypes = {
     type: PropTypes.string,
-    text: PropTypes.string,
-    icon: PropTypes.string
+    text: PropTypes.string
 };
 
 TwitchButton.defaultProps = {
     type: type.primary,
-    text: "hello world",
+    text: "",
     icon: ""
 };
 
