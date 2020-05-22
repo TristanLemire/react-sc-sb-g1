@@ -33,7 +33,7 @@ Button.story = {
   parameters: {
      design: {
         type: 'figma',
-        url: 'https://www.figma.com/file/S2kl75dqM33oYg3tzqzShp/Module-Design-System?node-id=7%3A718'
+        url: 'https://www.figma.com/file/gDnVcUOSYBKxazEpu2tg62/TP_AtomicDesign?node-id=1%3A2'
      }
   }
 }
