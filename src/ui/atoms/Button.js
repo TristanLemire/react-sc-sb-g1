@@ -16,7 +16,9 @@ const ButtonWrapper = styled.button`
 
 const TwitchButton = props => {
     const { text, type, icon } = props;
-    return <ButtonWrapper type={type}>{icon}{text}</ButtonWrapper>;
+    if (icon && !text) return <ButtonWrapper type={type}>{icon}</ButtonWrapper>;
+    else if (text && !icon) return <ButtonWrapper type={type}>{text}</ButtonWrapper>;
+    else if (text && icon) return <ButtonWrapper type={type}>{icon}{text}</ButtonWrapper>;
 };
 
 TwitchButton.propTypes = {
