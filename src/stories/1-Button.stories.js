@@ -17,7 +17,7 @@ const options = {
 };
 const defaultValue = 'primary';
 
-export const Button = () => <TwitchButton type={select("Type", options, defaultValue)} text={text("Text", "Primary Button")} ></TwitchButton>;
+export const Button = () => <TwitchButton type={select("Type", options, defaultValue)} text={text("Text", "Primary Button")} icon={text("Icon", "")}/>;
 
 Button.story = {
   parameters: {
