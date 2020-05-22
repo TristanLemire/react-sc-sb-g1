@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 // import { Button } from '@storybook/react/demo';
 import TwitchButton, { type, colors } from '../ui/atoms/Button';
-import { withKnobs, text, select } from "@storybook/addon-knobs";
+import { withKnobs, text, select,boolean } from "@storybook/addon-knobs";
 
 export default {
   title: 'Button',
@@ -18,8 +18,7 @@ export const Button = () => <TwitchButton
                               color={select("Color", colors, defaultValueColor)} 
                               type={select("Type", type, defaultValueType)} 
                               text={text("Text", "Primary Button")} 
-                              iconLeft={text("Icon-left", "")} 
-                              iconRight={text("Icon-right", "")}
+                              disabled={boolean("Disabled", false)}
                             />;
 
 Button.story = {

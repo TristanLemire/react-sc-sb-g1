@@ -13,31 +13,44 @@ export const type = {
 export const colors = {
   brand_primary: Colors.brand_primary,
   green: Colors.green,
-  grey: Colors.grey,
+  light_green: Colors.light_green,
+  darker_grey: Colors.darker_grey,
   white: Colors.white
 };
 
 const ButtonWrapper = styled.button`
-  background: ${props => (props.color)};
-  color: ${props => (props.type === type.secondary ? Colors.black : Colors.white)}; 
+  &:not([disabled]) {
+    background: ${props => (props.color)};
+    color: ${props => (props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white)};
+    cursor: pointer;
+  } 
+  background-color: ${Colors.darker_grey};
+  color: ${Colors.disabled_grey};
   padding: ${props => (props.type === type.icon ? "14px" : "8px" )} ${props => (props.type === type.primary ? "16px" : props.type === type.secondary ? "64px" : "30px")} ;
   border-radius: ${props => (props.type === type.icon ? "38px" : "4px")}; 
   font-weight: 600;
   font-size: 12px;
   line-height: 140%;
   font-family: sans-serif;
+  border: none;
+  cursor: not-allowed;
+
+  &:hover{
+    &:not([disabled]) {
+        opacity: 0.75;
+    }
+  }
 `;
 
 const TwitchButton = props => {
-  const { text, type, color, iconLeft, iconRight} = props;
+  const { text, type, color, iconLeft, iconRight, disabled} = props;
 
-return <ButtonWrapper color={color} type={type}>
-  {iconLeft && <Icon></Icon>}
+return <ButtonWrapper color={color} type={type} disabled={disabled}>
+  {iconLeft && <Icon icon={iconLeft}></Icon>}
   {text}
-  {iconRight && <Icon></Icon>}
+  {iconRight && <Icon icon={iconRight}></Icon>}
 
   </ButtonWrapper>;
-
 };
 
 TwitchButton.propTypes = {
@@ -45,7 +58,8 @@ TwitchButton.propTypes = {
   text: PropTypes.string,
   colors: PropTypes.string,
   iconLeft: PropTypes.string,
-  iconRight: PropTypes.string
+  iconRight: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 TwitchButton.defaultProps = {
@@ -53,7 +67,8 @@ TwitchButton.defaultProps = {
   text: "",
   iconLeft: "",
   iconRight: "",
-  colors: Colors.brand_primary
+  colors: Colors.brand_primary,
+  disabled: false
 };
 
 export default TwitchButton;
