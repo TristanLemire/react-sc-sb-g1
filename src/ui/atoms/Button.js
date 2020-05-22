@@ -45,8 +45,7 @@ const ButtonWrapper = styled.button`
   }
 
   p{
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 0px 4px;
   }
 `;
 
