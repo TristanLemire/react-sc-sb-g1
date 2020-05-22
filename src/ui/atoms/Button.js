@@ -33,6 +33,7 @@ const ButtonWrapper = styled.button`
   border-radius: ${props => (props.type === type.icon ? "38px" : "4px")}; 
   font-weight: 600;
   font-size: 12px;
+  font-family: "Roobert TRIAL";
   line-height: 140%;
   font-family: sans-serif;
   border: none;
@@ -48,8 +49,6 @@ const ButtonWrapper = styled.button`
       margin: 0px 4px;
   }
 `;
-
-const log = () => {console.log("coucou")}
 
 const TwitchButton = props => {
   const { text, type, color, iconLeft, iconRight, disabled} = props;
