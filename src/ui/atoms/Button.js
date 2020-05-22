@@ -57,7 +57,7 @@ return (
 <ButtonWrapper color={color} type={type} disabled={disabled}>
   {iconLeft && 
   <Icon icon={iconLeft} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
-    <p>{text}</p>
+    {text && <p>{text}</p>} 
   {iconRight && 
   <Icon icon={iconRight} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
 </ButtonWrapper>
