@@ -45,8 +45,8 @@ const ButtonWrapper = styled.button`
   }
 
   p{
-      margin-left: 4px;
-      margin-right: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 `;
 
@@ -55,12 +55,15 @@ const log = () => {console.log("coucou")}
 const TwitchButton = props => {
   const { text, type, color, iconLeft, iconRight, disabled} = props;
 
-return <ButtonWrapper color={color} type={type} disabled={disabled}>
-  {iconLeft && <Icon icon={iconLeft}></Icon>}
-  <p>{text}</p>
-  {iconRight && <Icon icon={iconRight}></Icon>}
-
-  </ButtonWrapper>;
+return (
+<ButtonWrapper color={color} type={type} disabled={disabled}>
+  {iconLeft && 
+  <Icon icon={iconLeft} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
+    <p>{text}</p>
+  {iconRight && 
+  <Icon icon={iconRight} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
+</ButtonWrapper>
+  );
 };
 
 TwitchButton.propTypes = {
@@ -69,8 +72,7 @@ TwitchButton.propTypes = {
   colors: PropTypes.string,
   iconLeft: PropTypes.string,
   iconRight: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
+  disabled: PropTypes.bool
 };
 
 TwitchButton.defaultProps = {
