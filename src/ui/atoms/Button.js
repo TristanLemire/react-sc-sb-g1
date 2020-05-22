@@ -36,6 +36,8 @@ const TwitchButton = props => {
 
     else if (IconLeft && !text && !IconRight) return <ButtonWrapper color={color} type={type}><IconLeft/></ButtonWrapper>;
 
+else if (IconLeft && text && !IconRight) return <ButtonWrapper color={color} type={type}><IconLeft/>{text}</ButtonWrapper>;
+
     else if (IconLeft && text && IconRight) return <ButtonWrapper color={color} type={type}><IconLeft/>{text}<IconRight/></ButtonWrapper>;
 };
 
