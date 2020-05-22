@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types";
 
 export const icons = {
-  default: "",
   star: "star",
   starBadge: "starBadge"
 }
