@@ -18,7 +18,7 @@ export const Button = () => <TwitchButton
                               type={select("Type", type, defaultValueType)} 
                               text={text("Text", "Primary Button")} 
                               disabled={boolean("Disabled", false)}
-                              onClick={action('test')}
+                              onClick={() => {action('test')}}
                             />;
 
 Button.story = {
