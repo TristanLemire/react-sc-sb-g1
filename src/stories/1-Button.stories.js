@@ -2,6 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import TwitchButton, { type, colors } from '../ui/atoms/Button';
 import { withKnobs, text, select,boolean } from "@storybook/addon-knobs";
+import { icons } from '../ui/atoms/Icon';
 
 export default {
   title: 'Button',
@@ -18,6 +19,8 @@ export const Button = () => <TwitchButton
                               type={select("Type", type, defaultValueType)} 
                               text={text("Text", "Primary Button")} 
                               disabled={boolean("Disabled", false)}
+                              iconLeft={select("Icon left", icons, icons.default)}
+                              iconRight={select("Icon right", icons, icons.default)}
                               onClick={() => {action('test')}}
                             />;
 

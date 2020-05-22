@@ -24,6 +24,9 @@ const ButtonWrapper = styled.button`
     color: ${props => (props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white)};
     cursor: pointer;
   } 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${Colors.darker_grey};
   color: ${Colors.disabled_grey};
   padding: ${props => (props.type === type.icon ? "14px" : "8px" )} ${props => (props.type === type.primary ? "16px" : props.type === type.secondary ? "64px" : "30px")} ;
@@ -40,6 +43,11 @@ const ButtonWrapper = styled.button`
         opacity: 0.75;
     }
   }
+
+  p{
+      margin-left: 4px;
+      margin-right: 4px;
+  }
 `;
 
 const log = () => {console.log("coucou")}
@@ -49,7 +57,7 @@ const TwitchButton = props => {
 
 return <ButtonWrapper color={color} type={type} disabled={disabled}>
   {iconLeft && <Icon icon={iconLeft}></Icon>}
-  {text}
+  <p>{text}</p>
   {iconRight && <Icon icon={iconRight}></Icon>}
 
   </ButtonWrapper>;
