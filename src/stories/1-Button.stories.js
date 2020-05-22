@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 // import { Button } from '@storybook/react/demo';
-import TwitchButton, { type } from '../ui/atoms/Button';
+import TwitchButton, { type, colors } from '../ui/atoms/Button';
 import { withKnobs, text, select } from "@storybook/addon-knobs";
 
 export default {
@@ -10,14 +10,17 @@ export default {
   decorators: [withKnobs]
 };
 
-const options = {
-  primary: "primary",
-  secondary: "secondary",
-  icon: "icon",
-};
-const defaultValue = 'primary';
+const defaultValueType = 'primary';
 
-export const Button = () => <TwitchButton type={select("Type", options, defaultValue)} text={text("Text", "Primary Button")} icon={text("Icon", "")}/>;
+const defaultValueColor = colors.brand_primary;
+
+export const Button = () => <TwitchButton 
+                              color={select("Color", colors, defaultValueColor)} 
+                              type={select("Type", type, defaultValueType)} 
+                              text={text("Text", "Primary Button")} 
+                              iconLeft={text("Icon-left", "")} 
+                              iconRight={text("Icon-right", "")}
+                            />;
 
 Button.story = {
   parameters: {
