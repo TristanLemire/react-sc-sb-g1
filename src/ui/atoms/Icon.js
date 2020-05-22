@@ -33,13 +33,13 @@ const TwitchIcon = props => {
 };
 
 TwitchIcon.propTypes = {
-  colors: PropTypes.string,
+  color: PropTypes.string,
   icon: PropTypes.string,
   big: PropTypes.bool
 };
 
 TwitchIcon.defaultProps = {
-  colors: "#000000",
+  color: "#FFFFFF",
   icon: "star",
   big: true
 };
