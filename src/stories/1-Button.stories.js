@@ -2,7 +2,7 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import TwitchButton, { type, colors } from "../ui/molecules/Button";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
-import { icons } from "../ui/atoms/Icon";
+import { icons } from "../ui/molecules/Button";
 
 export default {
   title: "Button",

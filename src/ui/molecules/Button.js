@@ -10,6 +10,18 @@ export const type = {
   icon: "icon",
 };
 
+export const icons = {
+  default: "",
+  star: "star",
+  starBadge: "starBadge",
+  bell: "bell",
+  comment: "comment",
+  search: "search",
+  heart: "heart",
+  file: "file",
+  share: "share",
+};
+
 export const colors = {
   brand_primary: Colors.brand_primary,
   green: Colors.green,
