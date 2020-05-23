@@ -2,18 +2,13 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import TwitchButton, { type, colors } from '../ui/molecules/Button';
 import { withKnobs, text, select,boolean } from "@storybook/addon-knobs";
+import { icons } from '../ui/atoms/Icon'
 
 export default {
   title: 'Button',
   component: TwitchButton,    
   decorators: [withKnobs]
 };
-
-const icons = {
-  default: "",
-  star: "star",
-  starBadge: "starBadge"
-}
 
 const defaultValueType = 'primary';
 
