@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Colors from "../particles/Colors";
-import Icon from "../atoms/Icon"
+import Icon from "../atoms/Icon";
 
 export const type = {
   primary: "primary",
@@ -15,22 +15,31 @@ export const colors = {
   green: Colors.green,
   light_green: Colors.light_green,
   darker_grey: Colors.darker_grey,
-  white: Colors.white
+  white: Colors.white,
 };
 
 const ButtonWrapper = styled.button`
   &:not([disabled]) {
-    background: ${props => (props.color)};
-    color: ${props => (props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white)};
+    background: ${(props) => props.color};
+    color: ${(props) =>
+      props.color === Colors.white || props.color === Colors.light_green
+        ? Colors.black
+        : Colors.white};
     cursor: pointer;
-  } 
+  }
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${Colors.darker_grey};
   color: ${Colors.disabled_grey};
-  padding: ${props => (props.type === type.icon ? "14px" : "8px" )} ${props => (props.type === type.primary ? "16px" : props.type === type.secondary ? "64px" : "30px")} ;
-  border-radius: ${props => (props.type === type.icon ? "38px" : "4px")}; 
+  padding: ${(props) => (props.type === type.icon ? "14px" : "8px")}
+    ${(props) =>
+      props.type === type.primary
+        ? "16px"
+        : props.type === type.secondary
+        ? "64px"
+        : "30px"};
+  border-radius: ${(props) => (props.type === type.icon ? "38px" : "4px")};
   font-weight: 600;
   font-size: 12px;
   font-family: "Roobert TRIAL";
@@ -39,28 +48,59 @@ const ButtonWrapper = styled.button`
   border: none;
   cursor: not-allowed;
 
-  &:hover{
+  &:hover {
     &:not([disabled]) {
-        opacity: 0.75;
+      opacity: 0.75;
     }
   }
 
-  p{
-    margin: 0px 4px;
+  p {
+    margin: 0px 6px;
   }
 `;
 
-const TwitchButton = props => {
-  const { text, type, color, iconLeft, iconRight, disabled, handleClick} = props;
+const TwitchButton = (props) => {
+  const {
+    text,
+    type,
+    color,
+    iconLeft,
+    iconRight,
+    disabled,
+    handleClick,
+  } = props;
 
-return (
-<ButtonWrapper onClick={() => handleClick()} color={color} type={type} disabled={disabled}>
-  {iconLeft && 
-  <Icon icon={iconLeft} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
-    {text && <p>{text}</p>} 
-  {iconRight && 
-  <Icon icon={iconRight} big={!text} color={props.color === Colors.white || props.color === Colors.light_green ? Colors.black : Colors.white}></Icon>}
-</ButtonWrapper>
+  return (
+    <ButtonWrapper
+      onClick={() => handleClick()}
+      color={color}
+      type={type}
+      disabled={disabled}
+    >
+      {iconLeft && (
+        <Icon
+          icon={iconLeft}
+          big={!text}
+          color={
+            props.color === Colors.white || props.color === Colors.light_green
+              ? Colors.black
+              : Colors.white
+          }
+        ></Icon>
+      )}
+      {text && <p>{text}</p>}
+      {iconRight && (
+        <Icon
+          icon={iconRight}
+          big={!text}
+          color={
+            props.color === Colors.white || props.color === Colors.light_green
+              ? Colors.black
+              : Colors.white
+          }
+        ></Icon>
+      )}
+    </ButtonWrapper>
   );
 };
 
@@ -71,7 +111,7 @@ TwitchButton.propTypes = {
   iconLeft: PropTypes.string,
   iconRight: PropTypes.string,
   disabled: PropTypes.bool,
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
 };
 
 TwitchButton.defaultProps = {
@@ -80,7 +120,7 @@ TwitchButton.defaultProps = {
   iconLeft: "",
   iconRight: "",
   colors: Colors.brand_primary,
-  disabled: false
+  disabled: false,
 };
 
 export default TwitchButton;
